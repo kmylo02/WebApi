@@ -1,0 +1,9 @@
+c:\users\usuario\documents\visual studio 2015\Projects\Edu.Uninpahu.Developer.Trabajo\Edu.Uninpahu.Developer.Trabajo.DataBase\bin\Debug\Edu.Uninpahu.Developer.Trabajo.DataBase.dacpac
+c:\users\usuario\documents\visual studio 2015\Projects\Edu.Uninpahu.Developer.Trabajo\Edu.Uninpahu.Developer.Trabajo.DataBase\bin\Debug\Edu.Uninpahu.Developer.Trabajo.DataBase.dll
+c:\users\usuario\documents\visual studio 2015\Projects\Edu.Uninpahu.Developer.Trabajo\Edu.Uninpahu.Developer.Trabajo.DataBase\bin\Debug\Edu.Uninpahu.Developer.Trabajo.DataBase.pdb
+c:\users\usuario\documents\visual studio 2015\Projects\Edu.Uninpahu.Developer.Trabajo\Edu.Uninpahu.Developer.Trabajo.DataBase\obj\Debug\Edu.Uninpahu.Developer.Trabajo.DataBase.dll
+c:\users\usuario\documents\visual studio 2015\Projects\Edu.Uninpahu.Developer.Trabajo\Edu.Uninpahu.Developer.Trabajo.DataBase\obj\Debug\Edu.Uninpahu.Developer.Trabajo.DataBase.pdb
+C:\Users\USUARIO\documents\visual studio 2015\Projects\Edu.Uninpahu.Developer.Trabajo\Edu.Uninpahu.Developer.Trabajo.DataBase\obj\Debug\Model.xml
+C:\Users\USUARIO\documents\visual studio 2015\Projects\Edu.Uninpahu.Developer.Trabajo\Edu.Uninpahu.Developer.Trabajo.DataBase\obj\Debug\refactor.xml
+C:\Users\USUARIO\documents\visual studio 2015\Projects\Edu.Uninpahu.Developer.Trabajo\Edu.Uninpahu.Developer.Trabajo.DataBase\obj\Debug\postdeploy.sql
+C:\Users\USUARIO\documents\visual studio 2015\Projects\Edu.Uninpahu.Developer.Trabajo\Edu.Uninpahu.Developer.Trabajo.DataBase\obj\Debug\predeploy.sql

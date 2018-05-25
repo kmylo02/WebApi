@@ -1,0 +1,21 @@
+﻿** Aspectos destacados
+     Tablas que se volverán a compilar
+       Ninguno
+     Índices clúster que se van a quitar
+       Ninguno
+     Índices clúster que se van a crear
+       Ninguno
+     Posibles problemas de datos
+       Ninguno
+
+** Acciones del usuario
+     Cambiar nombre
+       [dbo].[CATEGORIA] (Tabla)
+     Crear
+       [dbo].[PRESUPUESTO] (Tabla)
+       [dbo].[FK_PRESUPUESTO_ToTable] (Clave externa)
+
+** Acciones de compatibilidad
+
+Las bases de datos del proyecto y de destino tienen una configuración de intercalación diferente. Se pueden producir errores de implementación.
+

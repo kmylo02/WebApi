@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FinanzasPersonalesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CATEGORIA">
+          <Key>
+            <PropertyRef Name="ID_CATEGORIA" />
+          </Key>
+          <Property Name="ID_CATEGORIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_CATEGORIA" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRESUPUESTO">
+          <Key>
+            <PropertyRef Name="ID_PRESUPUESTO" />
+          </Key>
+          <Property Name="ID_PRESUPUESTO" Type="int" Nullable="false" />
+          <Property Name="ID_CATEGORIA" Type="int" Nullable="false" />
+          <Property Name="VALOR" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_PRESUPUESTO_ToTable">
+          <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
+          <End Role="PRESUPUESTO" Type="Self.PRESUPUESTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATEGORIA">
+              <PropertyRef Name="ID_CATEGORIA" />
+            </Principal>
+            <Dependent Role="PRESUPUESTO">
+              <PropertyRef Name="ID_CATEGORIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FinanzasPersonalesModelStoreContainer">
+          <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRESUPUESTO" EntityType="Self.PRESUPUESTO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PRESUPUESTO_ToTable" Association="Self.FK_PRESUPUESTO_ToTable">
+            <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+            <End Role="PRESUPUESTO" EntitySet="PRESUPUESTO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FinanzasPersonalesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CATEGORIA">
+          <Key>
+            <PropertyRef Name="ID_CATEGORIA" />
+          </Key>
+          <Property Name="ID_CATEGORIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_CATEGORIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PRESUPUESTO" Relationship="Self.FK_PRESUPUESTO_ToTable" FromRole="CATEGORIA" ToRole="PRESUPUESTO" />
+        </EntityType>
+        <EntityType Name="PRESUPUESTO">
+          <Key>
+            <PropertyRef Name="ID_PRESUPUESTO" />
+          </Key>
+          <Property Name="ID_PRESUPUESTO" Type="Int32" Nullable="false" />
+          <Property Name="ID_CATEGORIA" Type="Int32" Nullable="false" />
+          <Property Name="VALOR" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CATEGORIA" Relationship="Self.FK_PRESUPUESTO_ToTable" FromRole="PRESUPUESTO" ToRole="CATEGORIA" />
+        </EntityType>
+        <Association Name="FK_PRESUPUESTO_ToTable">
+          <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
+          <End Role="PRESUPUESTO" Type="Self.PRESUPUESTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATEGORIA">
+              <PropertyRef Name="ID_CATEGORIA" />
+            </Principal>
+            <Dependent Role="PRESUPUESTO">
+              <PropertyRef Name="ID_CATEGORIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FinanzasPersonalesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" />
+          <EntitySet Name="PRESUPUESTO" EntityType="Self.PRESUPUESTO" />
+          <AssociationSet Name="FK_PRESUPUESTO_ToTable" Association="Self.FK_PRESUPUESTO_ToTable">
+            <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+            <End Role="PRESUPUESTO" EntitySet="PRESUPUESTO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FinanzasPersonalesModelStoreContainer" CdmEntityContainer="FinanzasPersonalesEntities">
+          <EntitySetMapping Name="CATEGORIA">
+            <EntityTypeMapping TypeName="FinanzasPersonalesModel.CATEGORIA">
+              <MappingFragment StoreEntitySet="CATEGORIA">
+                <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+                <ScalarProperty Name="NOMBRE_CATEGORIA" ColumnName="NOMBRE_CATEGORIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRESUPUESTO">
+            <EntityTypeMapping TypeName="FinanzasPersonalesModel.PRESUPUESTO">
+              <MappingFragment StoreEntitySet="PRESUPUESTO">
+                <ScalarProperty Name="ID_PRESUPUESTO" ColumnName="ID_PRESUPUESTO" />
+                <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

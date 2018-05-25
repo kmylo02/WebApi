@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0">
+  <Operation Name="Rename Refactor" Key="d6aabdd5-2217-4ae1-ba66-b1c4be8289b9" ChangeDateTime="05/25/2018 02:25:45" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[CATEGORIA_].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CATEGORIA_]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_CATEGORIA" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a9c0d101-7a02-4922-9d42-ef3be5eacbda" ChangeDateTime="05/25/2018 03:19:39" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[CATEGORIA_]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[CATEGORIA]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="be9f5796-0e88-4e83-9682-4b309f601ef4" ChangeDateTime="05/25/2018 03:20:23" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[PRESUPUESTO].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PRESUPUESTO]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_PRESUPUESTO" />
+  </Operation>
+</Operations>
